@@ -26,7 +26,7 @@ int main() {
     // Looping untuk menghasilkan angka acak dan menulisnya ke file
     for(int i = 0; i < jumlah_data; i++) {
         // Menghasilkan angka acak antara 1 sampai 100.000
-        file << (rand() % 100000) + 1 << " "; 
+        file << (rand() % jumlah_data) + 1 << " "; 
     }
     
     file.close();
