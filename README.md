@@ -9,11 +9,17 @@ Getting the MPI library set up on windows is quite a hassel. The best way to set
 3. Run commands `sudo apt-get update`, `sudo apt install mpich` and `sudo apt install git`.
 4. Clone this repo: `git clone https://github.com/afnan47/Quicksort-Using-MPI`.
 5. Move into the directory cloned: `cd Quicksort-Using-MPI/`.
-6. Compile the code: `mpiCC quick_sort_MPI.cpp -o quick_sort_MPI`.
-7. Edit input file: `nano input.txt` or `vim input.txt`.(If you are not used to Linux editors, run `explorer.exe .` command to open explorer in the current folder. You can then edit the input file using notepad or use other tools such as VSCode)
-8. First enter the number of elements in your array and then the elements. For Example: 5 71 64 -12 434 3.
-9. Save your input file and exit.
-10. Run `mpirun -np 4 ./quick_sort_MPI input.txt output.txt`.
+6. Compile and run the generator to automatically create `input.txt`:
+   ```bash
+   g++ generator.cpp -o generator
+   ./generator
+   ```
+   or input file: `nano input.txt` or `vim input.txt`.(If you are not used to Linux editors, run `explorer.exe .`
+   command to open explorer in the current folder. You can then edit the input file using notepad or use other tools
+   such as VSCode). First enter the number of elements in your array and then the elements. For Example: 5 71 64 -12
+   434 3. Save your input file and exit.
+7. Compile the code: mpiCC quick_sort_MPI.cpp -o quick_sort_MPI
+8. Run `mpirun -np 4 ./quick_sort_MPI input.txt output.txt`.
 
 According to the number of processes you want you can change the value for the `-np` flag. 
 For example, `-np 4`, `-np 10`.
